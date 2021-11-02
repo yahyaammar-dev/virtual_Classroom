@@ -11,13 +11,13 @@
 
     <link rel="stylesheet" href="{{URL::asset('css/main.css')}}">
 
-    <title>Login</title>
+    <title>Checkout</title>
   </head>
   <body>
  
  <div class="container-fluid bg-light">
         <x-header />
-        <x-attendance />
+        <x-checkoutform />
         <x-footer />
  </div>   
     

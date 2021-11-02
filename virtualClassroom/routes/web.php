@@ -36,3 +36,39 @@ Route::get('teachers', function () {
 Route::get('courses', function () {
     return view('courses');
 });
+
+Route::get('stream', function () {
+    return view('stream');
+});
+
+Route::get('attendance', function () {
+    return view('attendance');
+});
+
+Route::get('recorded', function () {
+    return view('recorded');
+});
+
+Route::get('teacherprofile', function () {
+    return view('teacherprofile');
+});
+
+Route::get('paymentlist', function () {
+    return view('paymentlist');
+});
+
+Route::get('classroomapproval', function () {
+    return view('classroomapproval');
+});
+
+Route::get('notifications', function () {
+    return view('notifications');
+});
+
+Route::get('addtocart', function () {
+    return view('addtocart');
+});
+
+Route::get('checkout', function () {
+    return view('checkout');
+});
