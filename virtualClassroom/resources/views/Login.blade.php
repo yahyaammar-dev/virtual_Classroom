@@ -17,7 +17,7 @@
  
  <div class="container-fluid bg-light">
         <x-header />
-        <x-form />
+        <x-loginform />
         <x-footer />
  </div>   
     

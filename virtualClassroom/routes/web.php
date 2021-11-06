@@ -1,6 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginAdmin;
+use App\Http\Controllers\SignupSubAdmin;
+use App\Http\Controllers\SubAdminLogin;
+use App\Http\Controllers\SignupTeacher;
+use App\Http\Controllers\LoginTeacher;
+use App\Http\Controllers\SignupStudent;
+use App\Http\Controllers\LoginStudent;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +23,24 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('login');
 });
+
+Route::post('loginadmin', [LoginAdmin::class,'loginuser']);
+
+Route::post('signupsubadmin', [SignupSubAdmin::class,'SignupSubAdmin']);
+
+Route::post('subadminlogin', [SubAdminLogin::class,'Sub_Admin_Login']);
+
+Route::post('loginadmin',  [LoginAdmin::class,'loginuser']);
+
+Route::post('SignupTeacher',  [SignupTeacher::class,'SignupTeacher']);
+
+Route::post('LoginTeacher',  [LoginTeacher::class,'LoginTeacher']);
+
+Route::post('LoginStudent',  [LoginStudent::class,'LoginStudent']);
+
+Route::post('SignupStudent',  [SignupStudent::class,'SignupStudent']);
+
+Route::post('LoginStudent',  [LoginStudent::class,'LoginStudent']);
 
 Route::get('signup', function () {
     return view('signup');
