@@ -8,6 +8,9 @@ use App\Http\Controllers\SignupTeacher;
 use App\Http\Controllers\LoginTeacher;
 use App\Http\Controllers\SignupStudent;
 use App\Http\Controllers\LoginStudent;
+use App\Http\Controllers\admindashboard;
+use App\Http\Controllers\superadmin;
+use App\Http\Controllers\SubAdmins;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,12 +45,14 @@ Route::post('SignupStudent',  [SignupStudent::class,'SignupStudent']);
 
 Route::post('LoginStudent',  [LoginStudent::class,'LoginStudent']);
 
+Route::get('admindashboard',  [admindashboard::class,'admindashboard']);
+
+Route::get('superadmin',  [superadmin::class,'superadmin']);
+
+Route::get('SubAdmins',  [SubAdmins::class,'SubAdmins']);
+
 Route::get('signup', function () {
     return view('signup');
-});
-
-Route::get('admindashboard', function () {
-    return view('admindashboard');
 });
 
 Route::get('subadmins', function () {

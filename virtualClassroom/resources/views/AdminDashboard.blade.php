@@ -15,19 +15,23 @@
   </head>
   <body>
  
+<?php echo $teacher; ?>
+
+
+
  <div class="container-fluid bg-light">
         <x-header />
         <div class="container">
             <h3>Sub Admins</h3>
-            <x-blocks />
+            <x-blocks :dataitem="$data" :teachers="$teacher"/>
             <h3>Teachers</h3>
-            <x-blocks />
+            <x-blocks :dataitem="$teacher" />
             <h3>Verify Account</h3>
-            <x-blocks />
+            <x-blocks :dataitem="$data"/>
             <h3>Verify Classes</h3>
-            <x-blocks />
+            <x-blocks :dataitem="$data"/>
             <h3>Approve Payments</h3>
-            <x-blocks />
+            <x-blocks :dataitem="$data"/>
         </div>
         <x-footer />
  </div>   

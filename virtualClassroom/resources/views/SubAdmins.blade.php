@@ -18,7 +18,7 @@
  <div class="container-fluid bg-light">
         <x-header />
         <div class="container">
-            <h3>Sub Admins</h3>
+            <h3>Teachers</h3>
             <x-blocks />
             <x-blocks />
             <x-blocks />

@@ -1,16 +1,16 @@
+
+
+
 <div class="container">
   <div class="row">
-    <div class="col-sm">
-        <x-block />
-    </div>
-    <div class="col-sm">
-        <x-block />
-    </div>
-    <div class="col-sm">
-        <x-block />
-    </div>
-    <div class="col-sm">
-        <x-block />
-    </div>
+    
+  <?php foreach($dataitem as $single) { ?> 
+    
+      <div class="col-sm">
+          <x-block :item="$single"/>
+      </div>
+  <?php } ?>
+ 
+ 
   </div>
 </div>
