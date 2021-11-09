@@ -1,5 +1,4 @@
-
-
+<?php echo $dataitem; ?>
 
 <div class="container">
   <div class="row">
@@ -9,8 +8,6 @@
       <div class="col-sm">
           <x-block :item="$single"/>
       </div>
-  <?php } ?>
- 
- 
+  <?php } ?> 
   </div>
 </div>

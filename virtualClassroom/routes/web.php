@@ -11,6 +11,7 @@ use App\Http\Controllers\LoginStudent;
 use App\Http\Controllers\admindashboard;
 use App\Http\Controllers\superadmin;
 use App\Http\Controllers\SubAdmins;
+use App\Http\Controllers\classdata;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +51,8 @@ Route::get('admindashboard',  [admindashboard::class,'admindashboard']);
 Route::get('superadmin',  [superadmin::class,'superadmin']);
 
 Route::get('SubAdmins',  [SubAdmins::class,'SubAdmins']);
+
+Route::get('classdata',  [classdata::class,'getTeacherName']);
 
 Route::get('signup', function () {
     return view('signup');

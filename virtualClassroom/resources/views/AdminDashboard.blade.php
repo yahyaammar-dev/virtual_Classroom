@@ -15,7 +15,6 @@
   </head>
   <body>
  
-<?php echo $teacher; ?>
 
 
 
@@ -23,13 +22,13 @@
         <x-header />
         <div class="container">
             <h3>Sub Admins</h3>
-            <x-blocks :dataitem="$data" :teachers="$teacher"/>
+            <x-blocks :dataitem="$data" />
             <h3>Teachers</h3>
             <x-blocks :dataitem="$teacher" />
             <h3>Verify Account</h3>
-            <x-blocks :dataitem="$data"/>
+            <x-blocks :dataitem="$account"/>
             <h3>Verify Classes</h3>
-            <x-blocks :dataitem="$data"/>
+            <x-blocks :dataitem="$classrooms"/>
             <h3>Approve Payments</h3>
             <x-blocks :dataitem="$data"/>
         </div>
