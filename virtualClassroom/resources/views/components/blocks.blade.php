@@ -1,4 +1,4 @@
-<?php echo $dataitem; ?>
+
 
 <div class="container">
   <div class="row">

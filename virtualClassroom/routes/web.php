@@ -12,6 +12,13 @@ use App\Http\Controllers\admindashboard;
 use App\Http\Controllers\superadmin;
 use App\Http\Controllers\SubAdmins;
 use App\Http\Controllers\classdata;
+use App\Http\Controllers\Login;
+use App\Http\Controllers\Singup;
+use App\Http\Controllers\subadmin;
+use App\Http\Controllers\teacher;
+use App\Http\Controllers\student;
+use App\Http\Controllers\createclass;
+use App\Http\Controllers\joinclass;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +31,7 @@ use App\Http\Controllers\classdata;
 |
 */
 
-Route::get('/', function () {
-    return view('login');
-});
+Route::get('/', [Login::class,'Login']);
 
 Route::post('loginadmin', [LoginAdmin::class,'loginuser']);
 
@@ -54,17 +59,17 @@ Route::get('SubAdmins',  [SubAdmins::class,'SubAdmins']);
 
 Route::get('classdata',  [classdata::class,'getTeacherName']);
 
-Route::get('signup', function () {
-    return view('signup');
-});
+Route::get('signup', [Singup::class,'Singup']);
 
-Route::get('subadmins', function () {
-    return view('subadmins');
-});
+Route::get('subadmins', [subadmin::class,'subadmin']);
 
-Route::get('teachers', function () {
-    return view('teachers');
-});
+Route::get('teachers', [teacher::class,'teacher']);
+
+Route::get('students', [student::class,'student']);
+
+Route::post('createclass', [createclass::class,'createclass']);
+
+Route::post('joinclass', [joinclass::class,'joinclass']);
 
 Route::get('courses', function () {
     return view('courses');

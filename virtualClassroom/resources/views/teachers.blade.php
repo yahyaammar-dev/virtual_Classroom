@@ -17,13 +17,14 @@
  
  <div class="container-fluid bg-light">
         <x-header />
-        <x-info />
+
         <div class="container">
-            <h3>Teachers</h3>
-            <x-blocks />
-            <x-blocks />
-            <x-blocks />
-            <x-blocks />
+        
+            <x-createclass />
+            <h3>Classes</h3>
+            <x-blocks :dataitem="$classes" />
+            <h3>Students</h3>
+            <x-blockstudents :dataitem="$students" />
         </div>
         <x-footer />
  </div>   

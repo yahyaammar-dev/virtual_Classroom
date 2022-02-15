@@ -15,6 +15,7 @@ class SignupStudent extends Controller
         $add->phone = $req->phone;
         $add->password = $req->password;
         $add->course = $req->course;
+        $add->admin = $req->admin;
         $add->save();
         return redirect('/');
     }

@@ -20,17 +20,19 @@
 
  <div class="container-fluid bg-light">
         <x-header />
-        <div class="container">
+        <div class="container mt-5 pt-5">
             <h3>Sub Admins</h3>
             <x-blocks :dataitem="$data" />
             <h3>Teachers</h3>
             <x-blocks :dataitem="$teacher" />
-            <h3>Verify Account</h3>
+            <h3>Students</h3>
+            <x-blocks :dataitem="$student" />
+            <!-- <h3>Verify Account</h3>
             <x-blocks :dataitem="$account"/>
             <h3>Verify Classes</h3>
             <x-blocks :dataitem="$classrooms"/>
             <h3>Approve Payments</h3>
-            <x-blocks :dataitem="$data"/>
+            <x-blocks :dataitem="$data"/> -->
         </div>
         <x-footer />
  </div>   

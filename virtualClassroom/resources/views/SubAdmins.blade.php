@@ -19,13 +19,18 @@
         <x-header />
         <div class="container">
             <h3>Teachers</h3>
-            <x-blocks />
-            <x-blocks />
-            <x-blocks />
-            <x-blocks />
+            <x-blocks :dataitem="$teachers" />
+
+            <h3>Students</h3>
+            <x-blocks :dataitem="$students" />
+
+            <h3>Classrooms</h3>
+            <x-blockclassroom :dataitem="$classrooms" />
+
         </div>
         <x-footer />
  </div>   
+ 
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

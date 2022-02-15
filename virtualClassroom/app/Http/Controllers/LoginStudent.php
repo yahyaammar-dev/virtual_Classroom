@@ -13,7 +13,7 @@ class LoginStudent extends Controller
             return redirect('/');
         }else{
             $request->session()->put('user',$users[0]);
-            return redirect('admindashboard');
+            return redirect('students');
         }
     }
 }

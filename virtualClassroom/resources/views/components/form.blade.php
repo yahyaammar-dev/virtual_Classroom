@@ -66,7 +66,11 @@
                         </div>
                     </form>
                 </div>
+
                 <div class="tab-pane fade show" id="teacher" role="tabpanel" aria-labelledby="profile-tab">
+
+
+
                     <h3  class="register-heading">Signup as a Teacher</h3>
                     <form class="row register-form" action="SignupTeacher" method="POST">
                         <div class="col-md-6">
@@ -78,26 +82,32 @@
                                 <input type="password" name="idcard" class="form-control" placeholder="Password *" value="" />
                             </div>
                             <div class="form-group">
-                                <input type="email" name="salary" class="form-control" placeholder="Email *" value="" />
+                                <input type="text" name="salary" class="form-control" placeholder="salary *" value="" />
                             </div>
                             <div class="form-group">
-                                <input type="text" name="address" class="form-control" placeholder="Phone *" value="" />
+                                <input type="text" name="address" class="form-control" placeholder="address *" value="" />
                             </div>
                             <div class="form-group">
-                                <input type="text" name="username" class="form-control" placeholder="Phone *" value="" />
+                                <input type="text" name="username" class="form-control" placeholder="username *" value="" />
                             </div>
                             <div class="form-group">
-                                <input type="text" name="password" class="form-control" placeholder="Phone *" value="" />
+                                <input type="text" name="password" class="form-control" placeholder="password *" value="" />
                             </div>
                             <div class="form-group">
-                                <input type="text" name="phone" class="form-control" placeholder="Phone *" value="" />
+                                <input type="text" name="phone" class="form-control" placeholder="phone *" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-control" placeholder="email *" value="" />
                             </div>
                             <div class="form-group">
                                 <select name="admin" id="admin">
-                                    <option value="volvo">Volvo</option>
-                                    <option value="saab">Saab</option>
-                                    <option value="mercedes">Mercedes</option>
-                                    <option value="audi">Audi</option>
+
+                                    <?php 
+                                    foreach($admins as $admin){
+                                       ?> <option value="<?php echo $admin["user"];?> "><?php echo $admin["user"];?> </option>    <?php
+                                    }
+                                    ?>
+
                                 </select>
                             </div>
                         </div>
@@ -131,12 +141,29 @@
                             </div>
                             <div class="form-group">
                                 <select name="course" id="course">
-                                    <option value="volvo">Volvo</option>
-                                    <option value="saab">Saab</option>
-                                    <option value="mercedes">Mercedes</option>
-                                    <option value="audi">Audi</option>
+
+                                <?php 
+                                    foreach($classrooms as $classroom){
+                                       ?> <option value="<?php echo $classroom["user"];?> "><?php echo $classroom["user"];?> </option>    <?php
+                                    }
+                                    ?>
+
+
                                 </select>
                             </div>
+
+                            <div class="form-group">
+                                <select name="admin" id="admin">
+
+                                    <?php 
+                                    foreach($admins as $admin){
+                                       ?> <option value="<?php echo $admin["user"];?> "><?php echo $admin["user"];?> </option>    <?php
+                                    }
+                                    ?>
+                                    
+                                </select>
+                            </div>
+
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">

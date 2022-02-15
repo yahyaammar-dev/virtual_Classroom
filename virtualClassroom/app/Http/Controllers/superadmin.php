@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\AdminsM;
 use App\Models\TeachersM;
 use App\Models\classroomsM;
+use App\Models\Student;
 
 class superadmin extends Controller
 {
@@ -18,13 +19,16 @@ class superadmin extends Controller
         $account = TeachersM::where(['admin' => 'mercedes', 'status' => 'false'])->get();
        
         $classrooms = classroomsM::where(['status' => 'false'])->get();
+
+        $students = Student::where(['admin' => 'admin'])->get();
   
         return view('admindashboard',
         [
             'data'=>$subadmins,
             'teacher'=>$teachers,
             'account'=>$account,
-            'classrooms'=>$classrooms
+            'classrooms'=>$classrooms,
+            'student'=>$students
         ]
         );
 
