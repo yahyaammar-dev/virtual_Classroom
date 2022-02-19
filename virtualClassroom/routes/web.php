@@ -19,6 +19,8 @@ use App\Http\Controllers\teacher;
 use App\Http\Controllers\student;
 use App\Http\Controllers\createclass;
 use App\Http\Controllers\joinclass;
+use App\Http\Controllers\classstream;
+use App\Http\Controllers\poststream;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,6 +72,10 @@ Route::get('students', [student::class,'student']);
 Route::post('createclass', [createclass::class,'createclass']);
 
 Route::post('joinclass', [joinclass::class,'joinclass']);
+
+Route::post('classstream', [classstream::class, 'classstream']);
+
+Route::post('poststream', [poststream::class, 'poststream']);
 
 Route::get('courses', function () {
     return view('courses');

@@ -11,6 +11,11 @@
 
     <link rel="stylesheet" href="{{URL::asset('css/main.css')}}">
 
+
+ 
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+
     <title>Teachers</title>
   </head>
   <body>
@@ -18,11 +23,16 @@
  <div class="container-fluid bg-light">
         <x-header />
 
-        <x-join-class />
+      
 
         <div class="container">
             <h3>Classes</h3>
-         
+
+            <form method="POST" action="classstream" class="idform">
+              @csrf
+              <input type="text"  name="id" class="inputid" />
+              <input type="submit" />
+          </form>
 
 
 
@@ -36,11 +46,34 @@
     
 
   
-<div class="card card-margin">
+<div class="card card-margin myclass">
     <div class="card-header no-border">
         <h5 class="card-title">{{$single[0]["user"]}}</h5>
+        <h5 class="card-title itemid">{{$single[0]["id"]}}</h5>
     </div>
 </div>
+
+    
+
+
+   
+    <script>
+
+     
+ 
+
+    $(document).ready(function(){
+          let id = {{ $single[0]["id"]}}
+          
+          $(".myclass").click(function(){
+                let myid =($(this).find(".itemid").text())
+
+                $(".inputid").val(myid)
+                $(".idform").submit();
+
+            });
+          })
+    </script>
 
 
 
@@ -48,6 +81,7 @@
   <?php } ?> 
   </div>
 </div>
+
 
 
 

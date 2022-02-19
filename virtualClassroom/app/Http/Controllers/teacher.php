@@ -31,8 +31,19 @@ class teacher extends Controller
             foreach($classes as $class){
                 $stds = student_classroom::all()->where('id',$class["id"]);
             }   
+
+
+            $ids = [];
+
+
+            foreach($stds as $id){
+                array_push($ids, $id);
+            }
+
+            $i=0;
             foreach($classes as $class){
-                $stdst = student::all()->where('id',$stds[2]["id"]);
+                $stdst = student::all()->where('id',$ids[$i]);
+                $i++;
             }  
             array_push($students, $stdst); 
         }

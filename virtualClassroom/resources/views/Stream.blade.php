@@ -18,12 +18,10 @@
  <div class="container-fluid bg-light">
         <x-header />
         <div class="container">
-            
-        <x-streamitem />
-        <x-streamitem />
-        <x-streamitem />
-        <x-streamitem />
-        <x-streamitem />
+
+        <x-poststreamobj :id="$classid" />
+
+        <x-classstrem :lects="$lectures" />
 
         </div>
         <x-footer />

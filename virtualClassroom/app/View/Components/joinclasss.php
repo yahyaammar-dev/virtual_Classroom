@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class join-class extends Component
+class joinclasss extends Component
 {
     /**
      * Create a new component instance.

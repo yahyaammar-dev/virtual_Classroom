@@ -1,4 +1,4 @@
-<div class="card card-margin">
+<div class="card card-margin myclass">
     <div class="card-header no-border">
         <h5 class="card-title">{{$item->user}}</h5>
     </div>
@@ -8,6 +8,7 @@
                 <div class="widget-49-meeting-info">
                     <span class="widget-49-pro-title">{{$item->idcard}}</span>
                     <span class="widget-49-meeting-time">{{$item->email}}</span>
+                    <span class="widget-49-meeting-time itemid">{{$item->id}}</span>
                 </div>
             </div>
             <div class="widget-49-meeting-action">
@@ -16,6 +17,13 @@
         </div>
     </div>
 </div>
+
+
+<form method="POST" action="classstream" class="idform">
+    @csrf
+    <input type="text"  name="id" class="inputid" />
+    <input type="submit" />
+</form>
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
@@ -31,20 +39,23 @@
     $(document).ready(function(){
           let id = {{$item->id}}
           
-          
-          $.ajax({
-                type: 'POST',
-                url: "http://localhost:8001/classdata",
-                data: {id: id},
-                dataType: 'json',
-                success: function(data){
-                console.log(data)
-                }
+
+          $(".myclass").click(function(){
+                let myid =($(this).find(".itemid").text())
+
+
+                $(".inputid").val(myid)
+                $(".idform").submit();
+
+
             });
 
 
 
-      })
+
+
+          })
+
 
   
 
