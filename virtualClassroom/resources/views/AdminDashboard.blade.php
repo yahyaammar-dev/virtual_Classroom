@@ -33,6 +33,61 @@
             <x-blocks :dataitem="$classrooms"/>
             <h3>Approve Payments</h3>
             <x-blocks :dataitem="$data"/> -->
+
+
+            <h3>Subadmin payments completed</h3>
+            <x-blocks :dataitem="$paidsubadmins" />
+
+
+
+            <h3>Subadmin payments Left</h3>
+            <x-blocks :dataitem="$unpaidsubadmins" />
+
+
+            <h3>Pay to teachers</h3>
+
+            <form action="teacherpay" method="post" enctype="multipart/form-data">
+
+              @csrf
+
+              <input type="text" name="adminid" placeholder="adminid" value="<?php echo session("user")["id"]; ?>"/> <br>
+              
+
+              <select name="teacherid" id="teacherid">
+
+              <?php 
+
+                foreach($teacher as $t){
+               
+                  ?>
+
+                        <option value="<?php  echo $t["id"] ?>"><?php echo $t["id"] . "  " . $t["user"] ; ?></option>
+
+                  <?php
+
+                }
+
+                ?>
+
+               
+              </select>
+
+                <br>
+              <input type="file" name="file" /> <br>
+              <input type="submit" value="submit"/>
+
+            </form>
+
+
+              <h3>Students Fee paid</h3>
+                <x-blocks :dataitem="$paidstudents" />
+
+              <h3>Students Fee not paid</h3>
+              <x-blocks :dataitem="$unpaidstudents" />
+
+              <h3>All classrooms</h3>
+              <x-blocks :dataitem="$classrooms" />
+
         </div>
         <x-footer />
  </div>   

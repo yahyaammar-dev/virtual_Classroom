@@ -18,6 +18,9 @@
  <div class="container-fluid bg-light">
         <x-header />
         <div class="container">
+            
+            <a href="http://localhost:8001/makepayment"><button>Make Payment</button></a>
+        
             <h3>Teachers</h3>
             <x-blocks :dataitem="$teachers" />
 
@@ -26,6 +29,10 @@
 
             <h3>Classrooms</h3>
             <x-blockclassroom :dataitem="$classrooms" />
+
+        
+
+
 
         </div>
         <x-footer />

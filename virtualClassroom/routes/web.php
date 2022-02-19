@@ -21,6 +21,9 @@ use App\Http\Controllers\createclass;
 use App\Http\Controllers\joinclass;
 use App\Http\Controllers\classstream;
 use App\Http\Controllers\poststream;
+use App\Http\Controllers\makepayment;
+use App\Http\Controllers\submitpayment;
+use App\Http\Controllers\teacherpay;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,6 +79,12 @@ Route::post('joinclass', [joinclass::class,'joinclass']);
 Route::post('classstream', [classstream::class, 'classstream']);
 
 Route::post('poststream', [poststream::class, 'poststream']);
+
+Route::get('makepayment',[makepayment::class, 'makepayment']);
+
+Route::post('submitpayment',[submitpayment::class, 'submitpayment']);
+
+Route::post('teacherpay',[teacherpay::class, 'teacherpay']);
 
 Route::get('courses', function () {
     return view('courses');

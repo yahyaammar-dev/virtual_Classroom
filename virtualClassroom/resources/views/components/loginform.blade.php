@@ -33,7 +33,7 @@
                             <div class="form-group">
                                 <input type="password" name="pass" class="form-control" placeholder="Password *" value="" />
                             </div>
-                            <input type="submit" name="submit" class="btnRegister"  value="Register"/>
+                            <input type="submit" name="submit" class="btnRegister"  value="Login"/>
                         </div>
                     </form>
                 </div>
@@ -48,7 +48,7 @@
                             <div class="form-group">
                                 <input type="password" name="pass" class="form-control" placeholder="Password *" value="" />
                             </div>
-                            <input type="submit" name="submit" class="btnRegister"  value="Register"/>
+                            <input type="submit" name="submit" class="btnRegister"  value="Login"/>
                         </div>
                     </form>
                 </div>
@@ -63,7 +63,7 @@
                             <div class="form-group">
                                 <input type="password" name="pass" class="form-control" placeholder="Password *" value="" />
                             </div>
-                            <input type="submit" class="btnRegister"  value="Register"/>
+                            <input type="submit" class="btnRegister"  value="Login"/>
                         </div>
                     </form>
                 </div>
@@ -78,7 +78,7 @@
                             <div class="form-group">
                                 <input type="password" name="pass" class="form-control" placeholder="Password *" value="" />
                             </div>
-                            <input type="submit" class="btnRegister"  value="Register"/>
+                            <input type="submit" class="btnRegister"  value="Login"/>
                         </div>
                     </form>
                 </div>

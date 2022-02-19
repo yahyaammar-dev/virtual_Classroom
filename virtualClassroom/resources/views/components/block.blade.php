@@ -19,7 +19,7 @@
 </div>
 
 
-<form method="POST" action="classstream" class="idform">
+<form method="POST" action="classstream" class="idform" style="display:none;">
     @csrf
     <input type="text"  name="id" class="inputid" />
     <input type="submit" />
@@ -30,35 +30,14 @@
 
 
 @if( $item->type == 'classroom' )
-   
     <script>
-
-     
- 
-
     $(document).ready(function(){
           let id = {{$item->id}}
-          
-
           $(".myclass").click(function(){
                 let myid =($(this).find(".itemid").text())
-
-
                 $(".inputid").val(myid)
                 $(".idform").submit();
-
-
             });
-
-
-
-
-
           })
-
-
-  
-
     </script>
-
 @endif

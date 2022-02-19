@@ -60,7 +60,7 @@
                             <input type="text" maxlength="10" minlength="10" class="form-control" name="address" placeholder="Address *" value="" />
                         </div>
                         <div class="form-group">
-                            <input type="text" maxlength="10" minlength="10" class="form-control" name="idcard" placeholder="ID card Front *" value="" />
+                            <input type="text" maxlength="10" minlength="10" class="form-control" name="idcard" placeholder="ID card number" value="" />
                         </div>
                             <input type="submit" class="btnRegister"  value="Register"/>
                         </div>

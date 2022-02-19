@@ -21,9 +21,11 @@
   <body>
  
  <div class="container-fluid bg-light">
-        <x-header />
 
-      
+
+        <a href="http://localhost:8001/makepayment"><button>Make Payment</button></a>
+
+         <x-header />
 
         <div class="container">
             <h3>Classes</h3>
