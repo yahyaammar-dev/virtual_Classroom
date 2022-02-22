@@ -19,25 +19,9 @@
 </div>
 
 
-<form method="POST" action="classstream" class="idform" style="display:none;">
-    @csrf
-    <input type="text"  name="id" class="inputid" />
-    <input type="submit" />
-</form>
+
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
 
-@if( $item->type == 'classroom' )
-    <script>
-    $(document).ready(function(){
-          let id = {{$item->id}}
-          $(".myclass").click(function(){
-                let myid =($(this).find(".itemid").text())
-                $(".inputid").val(myid)
-                $(".idform").submit();
-            });
-          })
-    </script>
-@endif

@@ -18,7 +18,7 @@ class SignupTeacher extends Controller
         $add->phone = $req->phone;
         $add->admin = $req->admin;
         $add->status = 'false';
-        $add->email = $re1->email;
+        $add->email = $req->email;
         $add->save();
         return redirect('/');
     }

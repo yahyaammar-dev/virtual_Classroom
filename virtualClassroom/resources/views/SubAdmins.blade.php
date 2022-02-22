@@ -30,11 +30,88 @@
             <h3>Classrooms</h3>
             <x-blockclassroom :dataitem="$classrooms" />
 
+            <h3>Pay Teachers</p>
+
         
+ <form action="teacherpay" method="post" enctype="multipart/form-data">
+
+              @csrf
+
+              <input type="text" name="adminid" placeholder="adminid" value="<?php echo session("user")["id"]; ?>"/> <br>
+              
+
+              <select name="teacherid" id="teacherid">
+
+              <?php 
+
+                foreach($teachers as $t){
+               
+                  ?>
+
+                        <option value="<?php  echo $t["id"] ?>"><?php echo $t["id"] . "  " . $t["user"] ; ?></option>
+
+                  <?php
+
+                }
+
+                ?>
+
+               
+              </select>
+
+                <br>
+              <input type="file" name="file" /> <br>
+              <input type="submit" value="submit"/>
+
+            </form>
 
 
 
         </div>
+
+
+                <h1>Paid Student Fees </h1>
+                <?php 
+
+                  foreach($paid as $item){
+                      foreach($item as $i){
+
+
+                        echo '<div class="card" style="border: 2px solid black; margin: 1rem; width: auto;">';
+
+                        echo $i["user"].'<br>';
+                        echo $i["email"].'<br>';
+                        echo $i["phone"].'<br>';
+                      
+                        echo '</div>';
+
+                      }
+                  }
+
+                ?>
+
+
+                <h1>Unpaid Student Fees </h1>
+      
+
+                <?php 
+
+foreach($unpaid as $item){
+  foreach($item as $i){
+    echo '<div class="card" style="border: 2px solid black; margin: 1rem; width: auto;">';
+
+    echo $i["user"].'<br>';
+    echo $i["email"].'<br>';
+    echo $i["phone"].'<br>';
+  
+    echo '</div>';
+  }
+}
+
+
+?>
+
+
         <x-footer />
  </div>   
  

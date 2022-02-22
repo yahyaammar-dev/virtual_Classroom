@@ -86,6 +86,7 @@ Route::post('submitpayment',[submitpayment::class, 'submitpayment']);
 
 Route::post('teacherpay',[teacherpay::class, 'teacherpay']);
 
+
 Route::get('courses', function () {
     return view('courses');
 });

@@ -5,14 +5,30 @@
 
   
     
-  <?php foreach($dataitem as $single) { ?> 
+  <?php foreach($dataitem as $single) {
+    
+    
+    if($single==NULL){
+      continue;
+    }
+
+    
+    ?> 
   
     
 
   
 <div class="card card-margin">
     <div class="card-header no-border">
-        <h5 class="card-title">{{$single[2]->user}}</h5>
+        <h5 class="card-title"><?php 
+
+
+            foreach($single as $item){
+              echo $item["user"];
+            }        
+        
+        
+        ?></h5>
     </div>
    
 </div>
