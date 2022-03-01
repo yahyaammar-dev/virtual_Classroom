@@ -9,7 +9,7 @@ class SignupStudent extends Controller
 {
     public function signupstudent(REQUEST $req){
         $add = new Student;
-        $add->name = $req->user;
+        $add->user = $req->user;
         $add->address = $req->address;
         $add->email = $req->email;
         $add->phone = $req->phone;

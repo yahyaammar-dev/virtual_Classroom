@@ -32,5 +32,8 @@ class createclass extends Controller
         $tech_class->classroom_id = $cur_class;
         $tech_class->teacher_id = $teacher_name;
         $tech_class->save();
+
+        return redirect()->back();
+
     }
 }

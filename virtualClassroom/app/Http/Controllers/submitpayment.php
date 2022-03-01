@@ -35,6 +35,7 @@ class submitpayment extends Controller
         }
 
 
+
      
 
         if(session("user")["type"]=="student"){
@@ -46,9 +47,15 @@ class submitpayment extends Controller
 
             $fileModel = new payments;
         if($req->file()) {
-            $fileName = time().'_'.$req->file->getClientOriginalName();
-            $filePath = $req->file('file')->storeAs('uploads', $fileName, 'public');
-            $fileModel->fileurl = '/storage/' . $filePath;
+
+
+            $image = $req->file('file');
+            $image_name = $image->getClientOriginalName();
+            $image->move(public_path('/images'),$image_name);
+        
+            $image_path = "/images/" . $image_name;
+    
+            $fileModel->fileurl =   $image_path;
             $fileModel->idofpayee = $id;
             $fileModel->type = $type;
             $fileModel->admin = $admin;

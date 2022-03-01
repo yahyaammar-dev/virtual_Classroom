@@ -48,15 +48,22 @@ class teacher extends Controller
         array_push($allclasses, $classes);
  
         
-        $admin  = AdminsM::all()->where('user', session('user')["admin"]);
 
+        $students = [];
+        foreach($ids as $i){
+            foreach($i as $item){
+                $temp = student::all()->where('id', $item["student_id"]);
+                array_push($students,$temp);
+            }
+        }
+
+        
+        $admin  = AdminsM::all()->where('user', session('user')["admin"]);
 
         $adminid =  $admin[0]["id"];
 
         $teacherpay = teacherspay::all()->where('t_id',$teacher_id)->where('a_id',$adminid);
- 
- 
-        echo $teacherpay;
+
 
         return view('teachers',
         [

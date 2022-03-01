@@ -31,16 +31,15 @@
             <x-blockclassroom :dataitem="$classrooms" />
 
             <h3>Pay Teachers</p>
-
         
- <form action="teacherpay" method="post" enctype="multipart/form-data">
+            <form action="teacherpay" method="post" enctype="multipart/form-data" style="font-size: 1rem;">
 
               @csrf
 
-              <input type="text" name="adminid" placeholder="adminid" value="<?php echo session("user")["id"]; ?>"/> <br>
+              <input type="text" name="adminid"  class="mt-2" placeholder="adminid" value="<?php echo session("user")["id"]; ?>"/> <br>
               
 
-              <select name="teacherid" id="teacherid">
+              <select  name="teacherid" id="teacherid" class="mt-2">
 
               <?php 
 
@@ -60,8 +59,8 @@
               </select>
 
                 <br>
-              <input type="file" name="file" /> <br>
-              <input type="submit" value="submit"/>
+              <input type="file" class="mt-2"  name="file" /> <br>
+              <input type="submit" class="btn btn-primary mt-2" value="submit"/>
 
             </form>
 
@@ -77,13 +76,30 @@
                       foreach($item as $i){
 
 
-                        echo '<div class="card" style="border: 2px solid black; margin: 1rem; width: auto;">';
 
-                        echo $i["user"].'<br>';
-                        echo $i["email"].'<br>';
-                        echo $i["phone"].'<br>';
+
+
+
+
+
+
+
+
                       
-                        echo '</div>';
+                         
+                      
+                    
+                    
+
+
+
+                        echo '  <div class="card card-margin myclass mx-5 " style="font-size: 1rem;"> <div class="card-header no-border">  <p class="card-title"> ';
+
+                        echo "Name: " . $i["user"].'<br>';
+                        echo "Email: " .$i["email"].'<br>';
+                        echo "Phone: " .$i["phone"].'<br>';
+                      
+                        echo '  </div>  </div>';
 
                       }
                   }
@@ -94,25 +110,28 @@
                 <h1>Unpaid Student Fees </h1>
       
 
+<div class="row" style="max-width: 100%;">
+
                 <?php 
 
-foreach($unpaid as $item){
-  foreach($item as $i){
-    echo '<div class="card" style="border: 2px solid black; margin: 1rem; width: auto;">';
+          foreach($unpaid as $item){
+            foreach($item as $i){
+              echo ' <div class="card card-margin myclass mx-5 " style="font-size: 1rem;"> <div class="card-header no-border">  <p class="card-title">';
 
-    echo $i["user"].'<br>';
-    echo $i["email"].'<br>';
-    echo $i["phone"].'<br>';
-  
-    echo '</div>';
-  }
-}
+              echo $i["user"].'<br>';
+              echo $i["email"].'<br>';
+              echo $i["phone"].'<br>';
+            
+              echo '  </div>  </div>';
+            }
+          }
 
 
 ?>
 
 
-        <x-footer />
+        </div>       
+
  </div>   
  
     

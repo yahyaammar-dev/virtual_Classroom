@@ -50,10 +50,10 @@
 
               @csrf
 
-              <input type="text" name="adminid" placeholder="adminid" value="<?php echo session("user")["id"]; ?>"/> <br>
+              <input type="text" style="display:inherit; margin: auto;" name="adminid" placeholder="adminid" value="<?php echo session("user")["id"]; ?>"/> <br>
               
 
-              <select name="teacherid" id="teacherid">
+              <select name="teacherid" style="display:inherit; margin: auto;" id="teacherid">
 
               <?php 
 
@@ -73,8 +73,8 @@
               </select>
 
                 <br>
-              <input type="file" name="file" /> <br>
-              <input type="submit" value="submit"/>
+              <input type="file" style="display:inherit; margin: auto;" name="file" /> <br>
+              <input type="submit" style="display:inherit; margin: auto;" class="btn btn-primary" value="submit"/>
 
             </form>
 
@@ -89,7 +89,7 @@
               <x-blocks :dataitem="$classrooms" />
 
         </div>
-        <x-footer />
+
  </div>   
     
     <!-- Optional JavaScript -->

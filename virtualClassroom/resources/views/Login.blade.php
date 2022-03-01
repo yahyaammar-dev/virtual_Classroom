@@ -18,7 +18,6 @@
  <div class="container-fluid bg-light">
         <x-header />
         <x-loginform />
-        <x-footer />
  </div>   
     
     <!-- Optional JavaScript -->

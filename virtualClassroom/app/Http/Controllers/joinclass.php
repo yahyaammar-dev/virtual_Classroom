@@ -8,6 +8,7 @@ use App\Models\classroomsM;
 use App\Models\student_classroom;
 
 
+
 class joinclass extends Controller
 {
     public function joinclass(REQUEST $req){
@@ -19,9 +20,14 @@ class joinclass extends Controller
         $class =  $class_id[0]->id;
         $student =  session('user')->id;
         
+        echo $class;
+        echo $student;
+
         $add = new student_classroom;
         $add->classroom_id = $class;
         $add->student_id = $student;
         $add->save();
+
+        
     }
 }

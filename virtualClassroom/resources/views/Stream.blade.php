@@ -19,8 +19,22 @@
         <x-header />
         <div class="container">
 
-        <x-poststreamobj :id="$classid" />
+        <?php 
 
+
+      if(session('user')["type"]=="teacher"){
+
+?>
+
+        <x-poststreamobj :id="$classid" />
+<?php
+
+}
+
+?>
+
+
+        <h4>Lectures</h4>
         <x-classstrem :lects="$lectures" />
 
         </div>

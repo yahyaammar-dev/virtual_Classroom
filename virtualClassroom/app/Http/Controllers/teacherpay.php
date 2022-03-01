@@ -16,16 +16,19 @@ class teacherpay extends Controller
             
       $fileModel = new teacherspay;
       if($req->file()) {
-          $fileName = time().'_'.$req->file->getClientOriginalName();
-          $filePath = $req->file('file')->storeAs('/', $fileName);
+      
+      
+
+        $image = $req->file('file');
+        $image_name = $image->getClientOriginalName();
+        $image->move(public_path('/images'),$image_name);
+    
+        $image_path = "/images/" . $image_name;
+
+
+
          
-          //file is not moving to public folder
-         
-          $file = $req->file('file');
-          $file->move('/public',$fileName);
-         
-         
-          $fileModel->fileurl = $filePath;
+          $fileModel->fileurl = $image_path;
           $fileModel->a_id = $adminid;
           $fileModel->t_id = $teacherid;
           $fileModel->save();

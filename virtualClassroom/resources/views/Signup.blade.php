@@ -15,7 +15,7 @@
  <div class="container-fluid bg-light">
         <x-header />
         <x-form :admins="$admin" :classrooms="$classroom"/>
-        <x-footer />
+
  </div>   
     
     <!-- Optional JavaScript -->

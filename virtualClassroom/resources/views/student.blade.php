@@ -8,14 +8,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-
-    <link rel="stylesheet" href="{{URL::asset('css/main.css')}}">
-
-
- 
+    <link rel="stylesheet" href="{{URL::asset('css/main.css')}}"> 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-
-
     <title>Teachers</title>
   </head>
   <body>
@@ -23,14 +17,28 @@
  <div class="container-fluid bg-light">
 
 
-        <a href="http://localhost:8001/makepayment"><button>Make Payment</button></a>
-
          <x-header />
 
-        <div class="container">
-            <h3>Classes</h3>
+        <div class="container mt-5">
 
-            <form method="POST" action="classstream" class="idform">
+
+        <h3>Submit Fees</h3>        
+        <a href="http://localhost:8001/makepayment"><button class="btn btn-primary">Make Payment</button></a>
+
+
+        <h3>Join a classroom</h3>
+        <form method="post" action="joinclass">
+            @csrf
+            <input type="text" name="classname" placeholder="classname"/><br /><br />
+            <input type="text" name="classname" placeholder="teachername"/><br /><br />
+            <input type="submit" class="btn btn-primary" value="submit"/>
+        </form>
+
+
+
+        <h3>Classes</h3>
+
+            <form method="POST" action="classstream" class="idform" style="display:none">
               @csrf
               <input type="text"  name="id" class="inputid" />
               <input type="submit" />
@@ -43,19 +51,23 @@
 
   
     
-  <?php foreach($allclasses as $single) { ?> 
-  
+  <?php foreach($allclasses as $item) {    
     
+    
+      foreach($item as $single){
+       ?>
+       
+       
+<div class="col">
 
-  
 <div class="card card-margin myclass">
     <div class="card-header no-border">
-        <h5 class="card-title">{{$single[0]["user"]}}</h5>
-        <h5 class="card-title itemid">{{$single[0]["id"]}}</h5>
+        <h5 class="card-title">{{$single["user"]}} -</h5>
+        <h5 class="card-title itemid">{{$single["id"]}}</h5>
     </div>
 </div>
 
-    
+      </div>
 
 
    
@@ -77,10 +89,13 @@
           })
     </script>
 
-
-
+       
+       
+       
+       <?php
+      }
     
-  <?php } ?> 
+     } ?> 
   </div>
 </div>
 

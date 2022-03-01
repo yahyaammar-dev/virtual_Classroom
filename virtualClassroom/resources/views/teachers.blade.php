@@ -29,8 +29,19 @@
         <x-header />
 
         <div class="container">
-        
+
+
+          <h3>Start meeting</h3>
+          <a href="https://infinite-everglades-01536.herokuapp.com/" target="_blank"> <button class="btn btn-primary">Start Meeting</button></a>
+
+
+
+
+          <h3>Create class</h3>
             <x-createclass />
+           
+           
+           
             <h3>Classes</h3>
             
 
@@ -86,7 +97,45 @@
 
 
             <h3>Students</h3>
-            <x-blockstudents :dataitem="$students" />
+            
+
+            <div class="row">
+
+            <?php
+
+              foreach($students as $item){
+                  foreach($item as $i){
+             
+                      ?>
+
+
+                  <div class="card myclass" style="width: 18rem; margin: 1rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">{{$i["user"]}}</h5>
+                    </div>
+
+                    
+
+
+                  </div>
+
+<?php 
+                  
+                  
+
+
+                  }
+              }
+
+            ?>
+
+
+
+            </div>
+
+
+
+
       
       
       
